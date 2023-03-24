@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 
 import math
 import numpy as np
@@ -66,7 +66,7 @@ class Random:
       while R <= 0.:
         R = self.rand()
 
-      X = -math.log(R)*beta
+      X = -math.log(R)/beta
 
       return X
     
@@ -95,12 +95,3 @@ class Random:
         for i, val in enumerate(cdf):
             if rcdf <= val:
                 return i
-
-
-    def Random_Range(self, a, b,N):
-        norm_range = abs(b - a)
-        rand_nums = [self.rand() for _ in range(N)]
-        return [(n * norm_range) + min(a, b) for n in rand_nums]
-
-
-
